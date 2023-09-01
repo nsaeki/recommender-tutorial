@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "pytorch-basics"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+torch = {version = "^2.0.1+cu118", source = "pytorch-gpu-src"}
+torchvision = {version = "^0.15.2+cu118", source = "pytorch-gpu-src"}
+torchaudio = {version = "^2.0.2+cu118", source = "pytorch-gpu-src"}
+ipykernel = "^6.25.1"
+
+
+[[tool.poetry.source]]
+name = "pytorch-gpu-src"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.5.1"
+ruff = "^0.0.286"
+black = "^23.7.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
